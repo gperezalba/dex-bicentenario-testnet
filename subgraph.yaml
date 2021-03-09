@@ -107,7 +107,7 @@ dataSources:
     name: DEXAllow
     network: mainnet
     source:
-      address: "0x028766fB76586702FAf1768A13704c2A0861373a"
+      address: "0x94A45F09801790C87F5145C99C474ebA48b79d25"
       abi: DEXAllow
     mapping:
       kind: ethereum/events
@@ -121,6 +121,8 @@ dataSources:
       eventHandlers:
         - event: SetAllowance(indexed address,uint256[],bool)
           handler: handleSetAllowance
+        - event: SetAllowanceArray(address[],uint256,bool)
+          handler: handleSetAllowanceArray
       file: ./src/dex-allow.ts
 templates:
   - name: Token
